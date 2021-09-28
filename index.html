@@ -157,37 +157,37 @@ calculatebtn.onclick = function calculate() {
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 100 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 8.96;	
+		lot = pipvalue / 9;	
 	}
 	else if(selectedValue=="aud")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 7.23;	
+		lot = pipvalue / 7.25;	
 	}
 	else if(selectedValue=="nzd")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 6.95;	
+		lot = pipvalue / 7;	
 	}
 	else if(selectedValue=="gbp")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 13.53;	
+		lot = pipvalue / 13.5;	
 	}
 	else if(selectedValue=="cad")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 7.89;	
+		lot = pipvalue / 7.9;	
 	}
 	else if(selectedValue=="chf")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 10.77;	
+		lot = pipvalue / 10.7;	
 	}
 	
     showpips.innerHTML=parseFloat(pips).toFixed(5);
