@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk</title>
+    <title>Risk Management</title>
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/156px-Warning.svg.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
@@ -17,7 +17,7 @@
 		<div class="risk col-6">
 
             <label for="risk "> Risk ($)</label><br>
-            <input type="number" min="0" value="125" id="risk" class="form-control">
+            <input type="number" min="0" value="124" id="risk" class="form-control">
 
         </div> 
 
@@ -40,14 +40,14 @@
         <div class="entry col-6">
 
             <label for="entry"> Entry </label><br>
-            <input type="number" value="109.90" min="0" id="entry" class="form-control">
+            <input type="number" value="1.26575" min="0" id="entry" class="form-control">
 
         </div>
 
         <div class="stoploss col-6">
 
             <label for="stoploss"> Stop Loss </label><br>
-            <input type="number" value="110.00" min="0" id="stoploss" class="form-control">
+            <input type="number" value="1.26675" min="0" id="stoploss" class="form-control">
 
         </div>
         
@@ -109,7 +109,7 @@ calculatebtn.onclick = function calculate() {
 	
 	if(selectedValue=="gold")
 	{
-		pips = Math.abs(((entry.value - stoploss.value) * 100 )) ;
+		pips = Math.abs(((entry.value - stoploss.value) * 10 )) ;
 		pipvalue = risk.value / pips;
 		lot = pipvalue / 10;	
 	}
@@ -123,37 +123,37 @@ calculatebtn.onclick = function calculate() {
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 100 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 9.04;	
+		lot = pipvalue / 8.96;	
 	}
 	else if(selectedValue=="aud")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 7.28;	
+		lot = pipvalue / 7.23;	
 	}
 	else if(selectedValue=="nzd")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 7.02;	
+		lot = pipvalue / 6.95;	
 	}
 	else if(selectedValue=="gbp")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 13.68;	
+		lot = pipvalue / 13.53;	
 	}
 	else if(selectedValue=="cad")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 7.92;	
+		lot = pipvalue / 7.89;	
 	}
 	else if(selectedValue=="chf")
 	{
 		pips = Math.abs(((entry.value - stoploss.value) * 10000 )) ;
 		pipvalue = risk.value / pips;
-		lot = pipvalue / 10.79;	
+		lot = pipvalue / 10.77;	
 	}
 	
     showpips.innerHTML=parseFloat(pips).toFixed(5);
