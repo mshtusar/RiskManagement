@@ -17,7 +17,7 @@
 		<div class="risk col-6">
 
             <label for="risk "> Risk ($)</label><br>
-            <input type="number" min="0" value="124" id="risk" class="form-control">
+            <input type="number" min="0" value="125" id="risk" class="form-control">
 
         </div> 
 
@@ -40,14 +40,14 @@
         <div class="entry col-6">
 
             <label for="entry"> Entry </label><br>
-            <input type="number" value="1.26575" min="0" id="entry" class="form-control">
+            <input type="number" value="" min="0" id="entry" class="form-control">
 
         </div>
 
         <div class="stoploss col-6">
 
             <label for="stoploss"> Stop Loss </label><br>
-            <input type="number" value="1.26675" min="0" id="stoploss" class="form-control">
+            <input type="number" value="" min="0" id="stoploss" class="form-control">
 
         </div>
         
@@ -60,17 +60,30 @@
 
     </section>
     
-    <section class="calc">
+    <section class="row mb-3 calc">
 
-        <p> Pips = <span id="pips-value"> 0 </span> </p>
-        <p> Pip value = <span id="pip-value"> 0 </span> </p>
-        <p> Lot size = <span id="lot-value"> 0 </span> </p>
-        <p> Tp 4 = <span id="tp-value-4"> 0 </span> </p>
-        <p> Tp 8 = <span id="tp-value-8"> 0 </span> </p>
-        <p> Tp 10 = <span id="tp-value-10"> 0 </span> </p>
+        <p class="col-4"> Pips = <span id="pips-value"> 0 </span> </p>
+        <p class="col-4"> Pip value = <span id="pip-value"> 0 </span> </p>
+        <p class="col-4"> Lot size = <span id="lot-value"> 0 </span> </p>
 
 
     </section>
+	<section class="row mb-3">
+		<div class="col-6">
+			<p> Tp 1 = <span id="tp-value-1"> 0 </span> </p>
+			<p> Tp 2 = <span id="tp-value-2"> 0 </span> </p>
+			<p> Tp 3 = <span id="tp-value-3"> 0 </span> </p>
+			<p> Tp 4 = <span id="tp-value-4"> 0 </span> </p>
+			<p> Tp 5 = <span id="tp-value-5"> 0 </span> </p>
+		</div>
+		<div class="col-6">
+			<p> Tp 6 = <span id="tp-value-6"> 0 </span> </p>
+			<p> Tp 7 = <span id="tp-value-7"> 0 </span> </p>
+			<p> Tp 8 = <span id="tp-value-8"> 0 </span> </p>
+			<p> Tp 9 = <span id="tp-value-9"> 0 </span> </p>
+			<p> Tp 10 = <span id="tp-value-10"> 0 </span> </p>
+		</div>
+	</section>
     
 
 
@@ -90,8 +103,15 @@ var calculatebtn = document.getElementById('calculate');
 var showpips = document.getElementById("pips-value");
 var showpipvalue = document.getElementById("pip-value");
 var showlotvalue = document.getElementById("lot-value");
+var showtp1 = document.getElementById("tp-value-1");
+var showtp2 = document.getElementById("tp-value-2");
+var showtp3 = document.getElementById("tp-value-3");
 var showtp4 = document.getElementById("tp-value-4");
+var showtp5 = document.getElementById("tp-value-5");
+var showtp6 = document.getElementById("tp-value-6");
+var showtp7 = document.getElementById("tp-value-7");
 var showtp8 = document.getElementById("tp-value-8");
+var showtp9 = document.getElementById("tp-value-9");
 var showtp10 = document.getElementById("tp-value-10");
 
 calculatebtn.onclick = function calculate() {
@@ -99,12 +119,26 @@ calculatebtn.onclick = function calculate() {
 	var pips, pipvalue, lot;
     // alert(entry.value + "+" + stoploss.value);
 	var distance = (entry.value - stoploss.value);
+	var priceadd1=distance*1*100000;
+	var priceadd2=distance*2*100000;
+	var priceadd3=distance*3*100000;
 	var priceadd4=distance*4*100000;
+	var priceadd5=distance*5*100000;
+	var priceadd6=distance*6*100000;
+	var priceadd7=distance*7*100000;
 	var priceadd8=distance*8*100000;
+	var priceadd9=distance*9*100000;
 	var priceadd10=distance*10*100000;
 	var en=entry.value*100000;
+	var tp1 =	(en+priceadd1)/100000;
+	var tp2 =	(en+priceadd2)/100000;
+	var tp3 =	(en+priceadd3)/100000;
 	var tp4 =	(en+priceadd4)/100000;
+	var tp5 =	(en+priceadd5)/100000;
+	var tp6 =	(en+priceadd6)/100000;
+	var tp7 =	(en+priceadd7)/100000;
 	var tp8 =	(en+priceadd8)/100000;
+	var tp9 =	(en+priceadd9)/100000;
 	var tp10 =	(en+priceadd10)/100000;
 	
 	if(selectedValue=="gold")
@@ -159,8 +193,15 @@ calculatebtn.onclick = function calculate() {
     showpips.innerHTML=parseFloat(pips).toFixed(5);
     showpipvalue.innerHTML=parseFloat(pipvalue).toFixed(2);
     showlotvalue.innerHTML=parseFloat(lot).toFixed(2);
+    showtp1.innerHTML=parseFloat(tp1).toFixed(5);
+    showtp2.innerHTML=parseFloat(tp2).toFixed(5);
+    showtp3.innerHTML=parseFloat(tp3).toFixed(5);
     showtp4.innerHTML=parseFloat(tp4).toFixed(5);
+    showtp5.innerHTML=parseFloat(tp5).toFixed(5);
+    showtp6.innerHTML=parseFloat(tp6).toFixed(5);
+    showtp7.innerHTML=parseFloat(tp7).toFixed(5);
     showtp8.innerHTML=parseFloat(tp8).toFixed(5);
+    showtp9.innerHTML=parseFloat(tp9).toFixed(5);
     showtp10.innerHTML=parseFloat(tp10).toFixed(5);
 
 
